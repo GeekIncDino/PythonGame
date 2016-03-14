@@ -25,6 +25,9 @@ if event.type == pg.KEYDOWN and event.key == pg.K_RIGHT
         
 if event.type == pg.KEYDOWN and event.key == pg.K_UP
         moveup
+        
 if event.type == pg.KEYDOWN and event.key == pg.K_DOWN
+	movedown
+
 
 
