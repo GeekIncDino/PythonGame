@@ -11,22 +11,22 @@ while not done:
         
         pg.display.flip()
 
-def gameStart
+def gameStart:
 		print "Starting Game"
 
 if event.type == pg.KEYDOWN and event.key == pg.K_ENTER:
 	gameStart
 
-if event.type == pg.KEYDOWN and event.key == pg.K_LEFT
+if event.type == pg.KEYDOWN and event.key == pg.K_LEFT:
         moveleft
         
-if event.type == pg.KEYDOWN and event.key == pg.K_RIGHT
+if event.type == pg.KEYDOWN and event.key == pg.K_RIGHT:
         moveright
         
-if event.type == pg.KEYDOWN and event.key == pg.K_UP
+if event.type == pg.KEYDOWN and event.key == pg.K_UP:
         moveup
         
-if event.type == pg.KEYDOWN and event.key == pg.K_DOWN
+if event.type == pg.KEYDOWN and event.key == pg.K_DOWN:
 	movedown
 
 
