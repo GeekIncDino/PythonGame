@@ -1,5 +1,5 @@
 #Platform game with a twist
-#I stole a couple lines from pygame.org, but I labeled them all
+#I stole a couple lines from various sources, but I labeled them all
 #
 #Released under the  GNU General Public License
 
@@ -8,23 +8,29 @@ import pygame as pg
 pg.init()				#From pygame.org
 screen = pg.display.set_mode((150, 50))	#From pygame.org, modified
 done = False 				#From pygame.org
+pg.display.set_caption('Goomba Adventure')
 
 bkgrd = pg.Surface(screen.get_size())
 bkgrd = bkgrd.convert()
 bkgrd.fill((10, 15, 200))
 
+clock = pg.time.Clock()
+
 font = pg.font.SysFont(Arial, 12)
-	
-def runLVL1:
 
-def runLVL2:
-	
-def runLVL3:
+while not rip:
 
-def runLVL4:
-	
-def runLVL5:
+    for event in pg.event.get():
+        if event.type == pg.QUIT:
+            rip = True
 
+        print(event)
+
+    pygame.display.update()
+    clock.tick(60)
+    
+def runLVL():
+	
 
 def gameStart:									
 	print "Starting Game \n"
@@ -49,18 +55,19 @@ def gameStart:
 		print "Your only options are 1 through 5"
 		gameStart
 	print levelChosen
-
-if event.type == pg.KEYDOWN and event.key == pg.K_ENTER:
-	gameStart
 	
-if event.type == pg.KEYDOWN and event.key == pg.K_LEFT:
-        moveleft
+	
+	if event.type == pg.KEYDOWN and event.key == pg.K_ENTER:
+		gameStart
+	
+	if event.type == pg.KEYDOWN and event.key == pg.K_LEFT:
+        	moveleft
         
-if event.type == pg.KEYDOWN and event.key == pg.K_RIGHT:
-        moveright
+	if event.type == pg.KEYDOWN and event.key == pg.K_RIGHT:
+        	moveright
         
-if event.type == pg.KEYDOWN and event.key == pg.K_UP:
-        moveup
+	if event.type == pg.KEYDOWN and event.key == pg.K_UP:
+        	moveup
         
-if event.type == pg.KEYDOWN and event.key == pg.K_DOWN:
-	movedown
+	if event.type == pg.KEYDOWN and event.key == pg.K_DOWN:
+		movedown
