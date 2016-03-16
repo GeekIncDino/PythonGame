@@ -1,2 +1,2 @@
 # PythonGame
-Game in Python
+Its a Game in python. Don't sue us.
