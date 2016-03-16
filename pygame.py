@@ -14,10 +14,7 @@ bkgrd = bkgrd.convert()
 bkgrd.fill((10, 15, 200))
 
 font = pg.font.SysFont(Arial, 12)
-
-def checkGood:
-	pg.key.get.pressed()
-	if 
+	
 def runLVL1:
 
 def runLVL2:
@@ -30,26 +27,32 @@ def runLVL5:
 
 
 def gameStart:									
-	print "Starting Game %n"
-	print "Choose a level: 1 2 3 4 5 %n"
+	print "Starting Game \n"
+	print "Choose a level: 1 2 3 4 5 \n"
 	raw_input()
 	if raw_input() == 1:
-		runLVL1
+		runLVL(1)
+		levelChosen == 1
 	if raw_input() == 2:
-		runLVL3
+		runLVL(2)
+		levelChosen == 2
 	if raw_input() == 3:
-		runLVL3
+		runLVL(3)
+		levelChosen ==3
 	if raw_input() == 4:
-		runLVL4
+		runLVL(4)
+		levelChosen == 4
 	if raw_input() == 5:
-		runLVL5
+		runLVL(5)
+		levelChosen == 5
 	else:
 		print "Your only options are 1 through 5"
 		gameStart
+	print levelChosen
 
 if event.type == pg.KEYDOWN and event.key == pg.K_ENTER:
 	gameStart
-
+	
 if event.type == pg.KEYDOWN and event.key == pg.K_LEFT:
         moveleft
         
