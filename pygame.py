@@ -1,6 +1,6 @@
 #Platform game with a twist
 #
-#I stole a couple lines from various sources, but I labeled them all
+#I permanently borrowed a couple lines from various sources, but I labeled them all
 #
 #High School computer science project
 #
