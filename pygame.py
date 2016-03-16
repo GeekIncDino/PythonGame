@@ -1,5 +1,8 @@
 #Platform game with a twist
+#
 #I stole a couple lines from various sources, but I labeled them all
+#
+#High School computer science project
 #
 #Released under the  GNU General Public License
 
@@ -26,7 +29,7 @@ while not rip:
 
         print(event)
 
-    pygame.display.update()
+    pg.display.update()
     clock.tick(60)
     
 def runLVL():
