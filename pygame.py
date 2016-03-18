@@ -62,15 +62,15 @@ def gameStart:
 	
 	if event.type == pg.KEYDOWN and event.key == pg.K_ENTER:
 		gameStart
-	
+		print "It Worked"
 	if event.type == pg.KEYDOWN and event.key == pg.K_LEFT:
-        	moveleft
-        
+        	print "It Worked"
+        	
 	if event.type == pg.KEYDOWN and event.key == pg.K_RIGHT:
-        	moveright
+        	print "It Worked"
         
 	if event.type == pg.KEYDOWN and event.key == pg.K_UP:
-        	moveup
+        	print "It worked"
         
 	if event.type == pg.KEYDOWN and event.key == pg.K_DOWN:
-		movedown
+		print "Jack is scrub"
