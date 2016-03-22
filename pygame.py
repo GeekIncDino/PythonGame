@@ -6,7 +6,11 @@
 #
 #Released under the  GNU General Public License
 
+import sys
+import os
 import pygame as pg
+
+rip = True
 
 pg.init()				#From pygame.org
 screen = pg.display.set_mode((150, 50))	#From pygame.org, modified
@@ -33,7 +37,7 @@ while not rip:
     clock.tick(60)
     
 def runLVL():
-	
+	return()	
 
 def gameStart:									
 	print "Starting Game \n"
