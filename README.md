@@ -1,2 +1,2 @@
 # PythonGame
-Its a Game in python. Don't sue us.
+This game is a project for a highschool computer science class. Any likeness of existing Characters, Stories, People, etc are purely coincedental.
