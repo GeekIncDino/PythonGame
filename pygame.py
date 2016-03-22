@@ -23,7 +23,7 @@ bkgrd.fill((10, 15, 200))
 
 clock = pg.time.Clock()
 
-font = pg.font.SysFont(Arial, 12)
+font = pg.font.SysFont('Arial', 12)
 
 while not rip:
 
@@ -39,7 +39,7 @@ while not rip:
 def runLVL():
 	return()	
 
-def gameStart:									
+def gameStart():									
 	print "Starting Game \n"
 	print "Choose a level: 1 2 3 4 5 \n"
 	raw_input()
@@ -60,21 +60,24 @@ def gameStart:
 		levelChosen == 5
 	else:
 		print "Your only options are 1 through 5"
-		gameStart
+		gameStart()
 	print levelChosen
 	
 	
-	if event.type == pg.KEYDOWN and event.key == pg.K_ENTER:
-		gameStart
-		print "It Worked"
-	if event.type == pg.KEYDOWN and event.key == pg.K_LEFT:
-        	print "It Worked"
-        	
-	if event.type == pg.KEYDOWN and event.key == pg.K_RIGHT:
-        	print "It Worked"
-        
-	if event.type == pg.KEYDOWN and event.key == pg.K_UP:
-        	print "It worked"
-        
-	if event.type == pg.KEYDOWN and event.key == pg.K_DOWN:
-		print "Jack is scrub"
+
+
+while True:
+	for event in pg.event.get():
+		if event.type  == pg.KEYDOWN and event.key == pg.K_LEFT:
+			print "It Worked"
+		
+		if event.type == pg.KEYDOWN and event.key == pg.K_RIGHT:
+			print "It Worked"
+	
+		if event.type == pg.KEYDOWN and event.key == pg.K_UP:
+			print "It worked"
+	
+		if event.type == pg.KEYDOWN and event.key == pg.K_DOWN:
+			print "Jack is scrub"
+
+
