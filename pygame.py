@@ -11,9 +11,10 @@ import os
 import pygame as pg
 
 rip = True
-
+xa = 50
+ya = 30
 pg.init()				#From pygame.org
-screen = pg.display.set_mode((150, 50))	#From pygame.org, modified
+screen = pg.display.set_mode((500, 500))	#From pygame.org, modified
 done = False 				#From pygame.org
 pg.display.set_caption('Goomba Adventure')
 
@@ -64,20 +65,31 @@ def gameStart():
 	print levelChosen
 	
 	
+def draw(x,y):
+	pg.draw.rect(screen, (250,250,250), (0,0,500,500),0)
+	pg.draw.lines(screen, (255,0,0), False, [(0,250), (500,250)], 1)	
+	if y + 20 >= 250: 
+		y = 251
+		
+	pg.draw.rect(screen, (50,80,100), (x,y,20,20), 5)
+	pg.display.update()
+	return y
+
 
 
 while True:
 	for event in pg.event.get():
 		if event.type  == pg.KEYDOWN and event.key == pg.K_LEFT:
 			print "It Worked"
-		
+			xa = xa - 5
 		if event.type == pg.KEYDOWN and event.key == pg.K_RIGHT:
 			print "It Worked"
-	
+			xa = xa + 5
 		if event.type == pg.KEYDOWN and event.key == pg.K_UP:
 			print "It worked"
-	
+			ya = ya - 5
 		if event.type == pg.KEYDOWN and event.key == pg.K_DOWN:
 			print "Jack is scrub"
-
+			ya = ya + 5
+	ya = draw(xa, ya)
 
