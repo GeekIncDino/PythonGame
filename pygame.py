@@ -5,7 +5,7 @@
 #High School computer science project
 #
 #Released under the  GNU General Public License
-
+import time
 import sys
 import os
 import pygame as pg
@@ -17,14 +17,14 @@ pg.init()				#From pygame.org
 screen = pg.display.set_mode((500, 500))	#From pygame.org, modified
 done = False 				#From pygame.org
 pg.display.set_caption('Goomba Adventure')
-pg.key.get_repeat(10,5)
+pg.key.set_repeat(10, 5)
 
 bkgrd = pg.Surface(screen.get_size())
 bkgrd = bkgrd.convert()
 bkgrd.fill((10, 15, 200))
 
 clock = pg.time.Clock()
-
+inert = 0
 font = pg.font.SysFont('Arial', 12)
 
 while not rip:
@@ -70,7 +70,7 @@ def draw(x,y):
 	pg.draw.rect(screen, (250,250,250), (0,0,500,500),0)
 	pg.draw.lines(screen, (255,0,0), False, [(0,250), (500,250)], 1)	
 	if y + 20 >= 250: 
-		y = 251
+		y = 230
 		
 	pg.draw.rect(screen, (50,80,100), (x,y,20,20), 5)
 	pg.display.update()
@@ -78,19 +78,47 @@ def draw(x,y):
 
 
 
+def jump(xa, ya):
+	inert = 10
+	for inert in range (20):
+		ya = ya - inert
+		inert = inert - 1
+		
+		for event in pg.event.get():
+			if event.type  == pg.KEYDOWN and event.key == pg.K_LEFT:
+				xa = xa - 10
+			if event.type == pg.KEYDOWN and event.key == pg.K_RIGHT:
+				xa = xa + 10
+		draw(xa, ya)
+		time.sleep(.05)
+
+	for inert in range (20):
+		ya = ya + inert
+		inert = inert + 1
+
+		for event in pg.event.get():
+			if event.type  == pg.KEYDOWN and event.key == pg.K_LEFT:
+				xa = xa - 10
+			if event.type == pg.KEYDOWN and event.key == pg.K_RIGHT:
+				xa = xa + 10	
+		draw(xa, ya)
+		time.sleep(.05)
+	return xa
+
 while True:
+	
 	for event in pg.event.get():
 		if event.type  == pg.KEYDOWN and event.key == pg.K_LEFT:
-			print "It Worked"
-			xa = xa - 5
+			
+			xa = xa - 3
 		if event.type == pg.KEYDOWN and event.key == pg.K_RIGHT:
-			print "It Worked"
-			xa = xa + 5
+			
+			xa = xa + 3
 		if event.type == pg.KEYDOWN and event.key == pg.K_UP:
-			print "It worked"
-			ya = ya - 5
+			
+			xa = jump(xa, ya)
 		if event.type == pg.KEYDOWN and event.key == pg.K_DOWN:
-			print "Jack is scrub"
-			ya = ya + 5
+			
+			ya = ya + 3
 	ya = draw(xa, ya)
 
