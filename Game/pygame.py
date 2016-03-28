@@ -18,7 +18,10 @@ screen = pg.display.set_mode((500, 500))	#From pygame.org, modified
 done = False 				#From pygame.org
 pg.display.set_caption('Goomba Adventure')
 pg.key.set_repeat(10, 5)
-
+goomba1 = pg.image.load(os.path.join('data', 'goombawalk1.jpg'))
+goomba1rect = goomba1.get_rect()
+goomba2 = pg.image.load(os.path.join('data', 'goombawalk2.jpg'))
+goomba2rect = goomba2.get_rect()
 bkgrd = pg.Surface(screen.get_size())
 bkgrd = bkgrd.convert()
 bkgrd.fill((10, 15, 200))
@@ -72,7 +75,7 @@ def draw(x,y):
 	if y + 20 >= 250: 
 		y = 230
 		
-	pg.draw.rect(screen, (50,80,100), (x,y,20,20), 5)
+	pg.screen.blit(goomba1, goomba1rect)
 	pg.display.update()
 	return y
 
