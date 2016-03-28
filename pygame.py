@@ -78,6 +78,7 @@ def draw(x,y):
 
 
 while True:
+	pygame.key.set_repeat(10, 5)
 	for event in pg.event.get():
 		if event.type  == pg.KEYDOWN and event.key == pg.K_LEFT:
 			print "It Worked"
