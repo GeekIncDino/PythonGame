@@ -17,6 +17,7 @@ pg.init()				#From pygame.org
 screen = pg.display.set_mode((500, 500))	#From pygame.org, modified
 done = False 				#From pygame.org
 pg.display.set_caption('Goomba Adventure')
+pg.key.get_repeat(10,5)
 
 bkgrd = pg.Surface(screen.get_size())
 bkgrd = bkgrd.convert()
@@ -78,7 +79,6 @@ def draw(x,y):
 
 
 while True:
-	pygame.key.set_repeat(10, 5)
 	for event in pg.event.get():
 		if event.type  == pg.KEYDOWN and event.key == pg.K_LEFT:
 			print "It Worked"
