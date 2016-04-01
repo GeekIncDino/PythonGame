@@ -9,6 +9,7 @@ import time
 import sys
 import os
 import pygame as pg
+import random
 
 rip = True
 xa = 50
@@ -19,11 +20,6 @@ done = False 				#From pygame.org
 pg.display.set_caption('Goomba Adventure')
 pg.key.set_repeat(10, 5)
 
-goomba1 = pg.image.load(os.path.join('data', 'goombawalk1.jpg'))
-goomba1rect = goomba1.get_rect()
-goomba2 = pg.image.load(os.path.join('data', 'goombawalk2.jpg'))
-goomba2rect = goomba2.get_rect()
-
 bkgrd = pg.Surface(screen.get_size())
 bkgrd = bkgrd.convert()
 bkgrd.fill((10, 15, 200))
@@ -32,53 +28,47 @@ clock = pg.time.Clock()
 inert = 0
 font = pg.font.SysFont('Arial', 12)
 
-while not rip:
+monst = []
 
-    for event in pg.event.get():
-        if event.type == pg.QUIT:
-            rip = True
 
-        print(event)
 
-    pg.display.update()
-    clock.tick(60)
-    
-def runLVL():
-	return()	
 
-def gameStart():									
-	print "Starting Game \n"
-	print "Choose a level: 1 2 3 4 5 \n"
-	raw_input()
-	if raw_input() == 1:
-		runLVL(1)
-		levelChosen == 1
-	if raw_input() == 2:
-		runLVL(2)
-		levelChosen == 2
-	if raw_input() == 3:
-		runLVL(3)
-		levelChosen ==3
-	if raw_input() == 4:
-		runLVL(4)
-		levelChosen == 4
-	if raw_input() == 5:
-		runLVL(5)
-		levelChosen == 5
-	else:
-		print "Your only options are 1 through 5"
-		gameStart()
-	print levelChosen
+
+class mush:
+	def __init__ (self,x,num):
+		self.x = x
+		self.num=num
 	
+	def move(self):
+		if self.x > xa:		
+			self.x = self.x + .5
+			return self.x
+		if self.x < xa:
+			self.x = self.x - .5
+			return self.x
+
+
+
+
+
+pg.display.update()
+clock.tick(60)
+    
 	
 def draw(x,y):
 	pg.draw.rect(screen, (250,250,250), (0,0,500,500),0)
 	pg.draw.lines(screen, (255,0,0), False, [(0,250), (500,250)], 1)	
 	if y + 20 >= 250: 
 		y = 230
-		
-	pg.screen.blit(goomba1, goomba1rect)
+	
+	pg.draw.rect(screen, (250,250,250), (0,0,500,500),0)
+	for x in monst:
+		pg.draw.rect(screen, (0,250,250), (x.move(),60,20,20), 5)
+
+	pg.draw.rect(screen, (50,80,100), (x,y,20,20), 5)
 	pg.display.update()
+	
+
 	return y
 
 
@@ -110,6 +100,9 @@ def jump(xa, ya):
 		time.sleep(.05)
 	return xa
 
+
+for x in range(3):
+	monst.append(mush(30+x*10, x))
 while True:
 	
 	for event in pg.event.get():
@@ -127,3 +120,6 @@ while True:
 			ya = ya + 3
 	ya = draw(xa, ya)
 
+
+
+	
