@@ -13,9 +13,9 @@ import random
 
 rip = True
 xa = 50
-ya = 30
+ya = 250
 pg.init()				#From pygame.org
-screen = pg.display.set_mode((500, 500))	#From pygame.org, modified
+screen = pg.display.set_mode((1000, 500))	#From pygame.org, modified
 done = False 				#From pygame.org
 pg.display.set_caption('Goomba Adventure')
 pg.key.set_repeat(10, 5)
@@ -36,15 +36,15 @@ monst = []
 
 class mush:
 	def __init__ (self,x,num):
-		self.x = x
+		self.x = x+num*200
 		self.num=num
 	
 	def move(self):
-		if self.x > xa:		
-			self.x = self.x + .5
+		if self.x >= xa:		
+			self.x -= 0.5
 			return self.x
 		if self.x < xa:
-			self.x = self.x - .5
+			self.x += 0.5
 			return self.x
 
 
@@ -56,16 +56,17 @@ clock.tick(60)
     
 	
 def draw(x,y):
-	pg.draw.rect(screen, (250,250,250), (0,0,500,500),0)
-	pg.draw.lines(screen, (255,0,0), False, [(0,250), (500,250)], 1)	
+	pg.draw.rect(screen, (15,10,250), (0,0,1000,500),0)
 	if y + 20 >= 250: 
 		y = 230
 	
-	pg.draw.rect(screen, (250,250,250), (0,0,500,500),0)
-	for x in monst:
-		pg.draw.rect(screen, (0,250,250), (x.move(),60,20,20), 5)
-
-	pg.draw.rect(screen, (50,80,100), (x,y,20,20), 5)
+	
+	for n in monst:
+		pg.draw.rect(screen, (250,0,0), (n.move(),230,20,20), 5)
+	 
+	pg.draw.rect(screen, (250,250,100), (x,y,20,20), 5)
+	pg.draw.rect(screen, (0,250,100), (0,250,1000,250), 0)	
+	pg.draw.rect(screen, (121,85,72), (0,270,1000,250), 0)	
 	pg.display.update()
 	
 
