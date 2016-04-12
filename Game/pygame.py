@@ -69,7 +69,6 @@ def draw(x,y):
 	pg.draw.rect(screen, (121,85,72), (0,270,1000,250), 0)	
 	pg.display.update()
 	
-
 	return y
 
 
@@ -121,6 +120,7 @@ while True:
 			ya = ya + 3
 	ya = draw(xa, ya)
 
-
-
-	
+# pg.draw.rect(screen, (250, 250, 0), (1400, 0, 0, 0,), 0)
+# if x >= 1400
+	# game.end(0)
+	# time.sleep(60)
