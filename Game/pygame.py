@@ -45,7 +45,7 @@ def end(x):
 
 class mush:
 	def __init__ (self,x,num):
-		self.x = x+num*300+100
+		self.x = x+num*300+200
 		self.num=num
 	
 	def move(self):
