@@ -57,8 +57,14 @@ clock.tick(60)
 def end(x):
 	if x == 1:
 		print 'win'
+		screen.fill(255, 255, 255)
+		font.render("Congrats on Winning!", 1, (10, 10, 10))
+		time.sleep(100)
 	if x == 0:
 		print 'lose'
+		screen.fill(255, 255, 255)
+		font.render("You suck.", 1, (10, 10, 10))
+		time.sleep(100)
 
 def draw(x,y):
 	pg.draw.rect(screen, (15,10,250), (0,0,1000,500),0)
