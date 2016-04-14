@@ -120,7 +120,7 @@ while True:
 			ya = ya + 3
 	ya = draw(xa, ya)
 
-# pg.draw.rect(screen, (250, 250, 0), (1400, 0, 0, 0,), 0)
-# if x >= 1400
-	# game.end(0)
-	# time.sleep(60)
+pg.draw.rect(screen, (250, 250, 0), (1400, 0, 0, 0,), 0)
+if x >= 1400
+	end(1)
+	time.sleep(60)
