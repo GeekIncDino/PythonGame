@@ -30,16 +30,27 @@ font = pg.font.SysFont('Arial', 12)
 
 monst = []
 
-
-
+def end(x):
+	if x == 1:
+		pg.draw.rect(screen, (0,255,0), (0,0,1000,500),0)
+		pg.display.update()	
+		time.sleep(10)
+		sys.exit("you won")
+	if x == 0:
+		pg.draw.rect(screen, (255,0,0), (0,0,1000,500),0)
+		pg.display.update()	
+		time.sleep(10)
+		sys.exit("you lost")
 
 
 class mush:
 	def __init__ (self,x,num):
-		self.x = x+num*200
+		self.x = x+num*300+100
 		self.num=num
 	
 	def move(self):
+		if self.x <= xa + 10 and self.x >= xa - 10:
+			end(0)
 		if self.x >= xa:		
 			self.x -= 0.5
 			return self.x
@@ -54,17 +65,7 @@ class mush:
 pg.display.update()
 clock.tick(60)
     
-def end(x):
-	if x == 1:
-		print 'win'
-		screen.fill(255, 255, 255)
-		font.render("Congrats on Winning!", 1, (10, 10, 10))
-		time.sleep(100)
-	if x == 0:
-		print 'lose'
-		screen.fill(255, 255, 255)
-		font.render("You suck.", 1, (10, 10, 10))
-		time.sleep(100)
+
 
 def draw(x,y):
 	pg.draw.rect(screen, (15,10,250), (0,0,1000,500),0)
